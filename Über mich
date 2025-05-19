@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Über mich – FamilienKompas Jansen</title>
+</head>
+<body>
+    <h1>Über mich</h1>
+    <p>Hier steht dein Text über deine Person, deine pädagogische Erfahrung und Motivation.</p>
+    <a href="index.html">Zurück zur Startseite</a>
+</body>
+</html> 
