@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FamilienKompas Jansen</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #fdf6e3; color: #333; }
+        header { background: #ffcc00; padding: 2rem; text-align: center; }
+        nav a { margin: 0 1rem; text-decoration: none; color: #333; font-weight: bold; }
+        section { padding: 2rem; }
+        footer { background: #eee; text-align: center; padding: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FamilienKompas Jansen</h1>
+        <p>Beratung mit Herz und Orientierung – wie Sonne und Kompass</p>
+        <nav>
+            <a href="ueber-mich.html">Über mich</a>
+            <a href="angebot.html">Angebot & Preise</a>
+            <a href="kontakt.html">Kontakt & Bezahldaten</a>
+            <a href="termine.html">Termine buchen</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Willkommen!</h2>
+        <p>Ich unterstütze Familien auf ihrem Weg mit individueller, vertrauensvoller Beratung.</p>
+    </section>
+    <footer>
+        &copy; 2025 FamilienKompas Jansen
+    </footer>
+</body>
+</html>
