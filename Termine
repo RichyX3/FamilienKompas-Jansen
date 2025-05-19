@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Termine buchen – FamilienKompas Jansen</title>
+</head>
+<body>
+    <h1>Termine buchen</h1>
+    <p>Hier kannst du später einen Kalender einbinden, z. B. von <a href="https://calendly.com/" target="_blank">Calendly</a>.</p>
+    <a href="index.html">Zurück zur Startseite</a>
+</body>
+</html> 
