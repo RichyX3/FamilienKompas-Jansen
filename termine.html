@@ -2,12 +2,159 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Termine buchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FamilienKompas Jansen - Terminbuchung</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #FFFAF0;
+      color: #444;
+      margin: 0; padding: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      color: #E67E22;
+      border-bottom: 2px solid #FFAB40;
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea, button {
+      padding: 0.6rem;
+      border: 1px solid #E67E22;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    button {
+      background: #E67E22;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+    button:hover {
+      background: #cf6c18;
+    }
+    nav {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 0.8rem;
+      color: #E67E22;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .success-message {
+      background: #DFF2BF;
+      color: #4F8A10;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <nav aria-label="Hauptnavigation">
+    <a href="index.html">Startseite</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="angebot.html">Angebot &amp; Preisliste</a>
+    <a href="kontakt.html">Kontakt &amp; Bezahldaten</a>
+  </nav>
+
   <h1>Terminbuchung</h1>
-  <p>Hier wird bald ein Kalender eingebunden, über den du Termine buchen kannst.</p>
-  <a href="index.html">Zurück zur Startseite</a>
+
+  <form id="bookingForm" novalidate>
+    <label for="name">Ihr Name *</label>
+    <input type="text" id="name" name="name" required placeholder="Vor- und Nachname" />
+
+    <label for="email">E-Mail-Adresse *</label>
+    <input type="email" id="email" name="email" required placeholder="name@beispiel.de" />
+
+    <label for="telefon">Telefonnummer</label>
+    <input type="tel" id="telefon" name="telefon" placeholder="Optional" />
+
+    <label for="datum">Wunschtermin *</label>
+    <input type="date" id="datum" name="datum" required min="" />
+
+    <label for="zeit">Wunschzeit *</label>
+    <select id="zeit" name="zeit" required>
+      <option value="" disabled selected>Bitte wählen</option>
+      <option>09:00 - 10:00</option>
+      <option>10:30 - 11:30</option>
+      <option>14:00 - 15:00</option>
+      <option>15:30 - 16:30</option>
+      <option>17:00 - 18:00</option>
+    </select>
+
+    <label for="art">Art der Beratung *</label>
+    <select id="art" name="art" required>
+      <option value="" disabled selected>Bitte wählen</option>
+      <option>Kostenfreies Erstgespräch (30 Min.)</option>
+      <option>Einzelberatung (60 Min.)</option>
+      <option>Paare-/Familienberatung (90 Min.)</option>
+      <option>Online-Coaching-Paket (4 Sitzungen)</option>
+    </select>
+
+    <label for="nachricht">Zusätzliche Nachricht</label>
+    <textarea id="nachricht" name="nachricht" rows="4" placeholder="Optional"></textarea>
+
+    <button type="submit">Termin anfragen</button>
+  </form>
+
+  <div class="success-message" id="successMessage" role="alert">
+    Vielen Dank für Ihre Terminanfrage. Wir werden uns zeitnah bei Ihnen melden.
+  </div>
+
+  <script>
+    // Min. Datum auf heute setzen
+    const datumInput = document.getElementById('datum');
+    const heute = new Date().toISOString().split('T')[0];
+    datumInput.setAttribute('min', heute);
+
+    const form = document.getElementById('bookingForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Beispiel: Hier könnte eine API-Anfrage stehen, oder ein Mailversand via Backend
+
+      // Formulardaten sammeln (für Demo)
+      const formData = new FormData(form);
+      console.log("Termin angefragt:", Object.fromEntries(formData.entries()));
+
+      // Formular zurücksetzen
+      form.reset();
+
+      // Erfolgsmeldung zeigen
+      successMessage.style.display = 'block';
+    });
+  </script>
 </body>
-</html>
+</html> 
