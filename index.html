@@ -1,91 +1,82 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FamilienKompas Jansen</title>
     <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f0f4ff;
-        color: #333;
-      }
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #001f3f;
-        padding: 1rem;
-        color: white;
-      }
-      header img {
-        height: 200px;
-      }
-      nav {
-        background-color: #001f3f;
-        padding: 1rem;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        height: 100%;
-        width: 200px;
-        transition: left 0.3s;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      .menu-toggle {
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-      }
-      .nav-open nav {
-        left: 0;
-      }
-      main {
-        padding: 2rem;
-        margin-left: 0;
-        transition: margin-left 0.3s;
-      }
-      .nav-open main {
-        margin-left: 200px;
-      }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8d6; /* Gelblicher Hintergrund passend zum Logo */
+            color: #333;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fce44d; /* Helles Gelb wie im Logo */
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header img {
+            height: 100px;
+        }
+        .menu-toggle {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        nav {
+            position: fixed;
+            left: -200px;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            background-color: #fff0a8; /* Hellgelb */
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            padding-top: 60px;
+            transition: left 0.3s ease;
+        }
+        nav a {
+            display: block;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #f9e76e;
+        }
+        nav.open {
+            left: 0;
+        }
+        main {
+            padding: 20px;
+        }
     </style>
-  </head>
-  <body>
-    <div id="container">
-      <header>
-        <img src="logo.png.PNG" alt="FamilienKompas Jansen Logo" />
-        <button class="menu-toggle" onclick="toggleNav()">☰ Menü</button>
-      </header>
-      <nav>
+</head>
+<body>
+    <header>
+        <img src="logo.png.PNG" alt="FamilienKompas Jansen Logo">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+    <nav id="sideMenu">
         <a href="index.html">Startseite</a>
-        <a href="Über mich.html">Über mich</a>
-        <a href="Angebot.html">Angebot & Preisliste</a>
-        <a href="Kontakt.html">Kontakt & Bezahldaten</a>
-        <a href="Termine.html">Termine</a>
-      </nav>
-      <main>
+        <a href="angebot.html">Angebot</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="termine.html">Termine</a>
+        <a href="ueber-mich.html">Über mich</a>
+    </nav>
+    <main>
         <h1>Willkommen bei FamilienKompas Jansen</h1>
-        <p>
-          Ihre Anlaufstelle für professionelle Familienberatung und
-          Elterncoaching. Gemeinsam navigieren wir durch stürmische Zeiten – mit
-          Herz, Verstand und dem richtigen Kompass.
-        </p>
-      </main>
-    </div>
+        <p>Familienberatung mit Herz, Verstand und Struktur – online und flexibel.</p>
+    </main>
     <script>
-      function toggleNav() {
-        document.getElementById('container').classList.toggle('nav-open');
-      }
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            menu.classList.toggle('open');
+        }
     </script>
-  </body>
+</body>
 </html>
