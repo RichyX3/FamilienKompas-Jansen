@@ -1,51 +1,92 @@
-/* Farben passend zum Logo: Blau, Gelb, Rot */
+/* === Grundlayout === */
 body {
-  font-family: sans-serif;
-  background-color: #009fe3; /* Hintergrund in Logoblau */
-  color: #fff;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFCC33; /* Helles Gelb, passend zum Logo */
+  color: #333333;
 }
 
+/* === Navigation === */
 header {
-  background-color: #007bbd;
-  padding: 1rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.logo {
-  height: 80px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+header img {
+  height: 60px;
 }
 
 nav a {
-  color: #ffcc00; /* Gelb wie Schrift im Logo */
+  margin: 0 1rem;
   text-decoration: none;
+  color: #E52421;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #00AEEF; /* Blau aus dem Logo */
 }
 
+/* === Hauptcontainer === */
 main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #FFFFFF;
   padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* === Buttons === */
+button,
+.button {
+  background-color: #E52421;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover,
+.button:hover {
+  background-color: #c11d1a;
+  transform: scale(1.03);
+}
+
+/* === Footer === */
 footer {
-  background-color: #007bbd;
-  color: white;
+  background-color: #00AEEF;
+  color: #FFFFFF;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
 }
