@@ -1,34 +1,116 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FamilienKompas Jansen</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #fdf6e3; color: #333; }
-        header { background: #ffcc00; padding: 2rem; text-align: center; }
-        nav a { margin: 0 1rem; text-decoration: none; color: #333; font-weight: bold; }
-        section { padding: 2rem; }
-        footer { background: #eee; text-align: center; padding: 1rem; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FamilienKompas Jansen - Startseite</title>
+  <style>
+    /* Grundfarben, Sonne-/Kompass-Elemente */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #FFD966 30%, #FFAB40 70%);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header {
+      background: #fff3cd;
+      width: 100%;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #E67E22;
+      letter-spacing: 0.05em;
+    }
+    .compass-sun {
+      margin: 2rem 0;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at center, #FFD966 60%, #FFAB40 100%);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 15px #FFAB40;
+    }
+    .compass-sun::before, .compass-sun::after {
+      content: "";
+      position: absolute;
+      background: #E67E22;
+      top: 50%; left: 50%;
+      transform-origin: center;
+      transform: translate(-50%, -50%);
+    }
+    /* Kompassnadeln */
+    .compass-sun::before {
+      width: 8px;
+      height: 70px;
+      border-radius: 4px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      box-shadow: 0 0 5px #E67E22;
+    }
+    .compass-sun::after {
+      width: 8px;
+      height: 70px;
+      border-radius: 4px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      box-shadow: 0 0 5px #E67E22;
+    }
+    main {
+      max-width: 600px;
+      padding: 1rem 2rem;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    nav {
+      margin-top: 1.5rem;
+    }
+    nav a {
+      margin: 0 0.8rem;
+      color: #E67E22;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>FamilienKompas Jansen</h1>
-        <p>Beratung mit Herz und Orientierung – wie Sonne und Kompass</p>
-        <nav>
-            <a href="ueber-mich.html">Über mich</a>
-            <a href="angebot.html">Angebot & Preise</a>
-            <a href="kontakt.html">Kontakt & Bezahldaten</a>
-            <a href="termine.html">Termine buchen</a>
-        </nav>
-    </header>
-    <section>
-        <h2>Willkommen!</h2>
-        <p>Ich unterstütze Familien auf ihrem Weg mit individueller, vertrauensvoller Beratung.</p>
-    </section>
-    <footer>
-        &copy; 2025 FamilienKompas Jansen
-    </footer>
+  <header>
+    <h1>FamilienKompas Jansen</h1>
+  </header>
+
+  <div class="compass-sun" aria-label="Symbol Sonne und Kompass"></div>
+
+  <main>
+    <p>Herzlich willkommen bei FamilienKompas Jansen – Ihrem Kompass für kompetente und einfühlsame Familienberatung. Gemeinsam finden wir den richtigen Weg für Ihre Familie.</p>
+    
+    <nav aria-label="Hauptnavigation">
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="angebot.html">Angebot &amp; Preisliste</a>
+      <a href="kontakt.html">Kontakt &amp; Bezahldaten</a>
+      <a href="redirect.html">Terminbuchung</a>
+    </nav>
+  </main>
+
+  <footer>
+    &copy; 2025 FamilienKompas Jansen
+  </footer>
 </body>
 </html>
